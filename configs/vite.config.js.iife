@@ -1,0 +1,19 @@
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  server: {
+    port: 8085,
+  },
+  build: {
+    lib: {
+      entry: "src/main.js",
+      name: "ChatembedChatbox",
+      formats: ["iife"],
+      fileName: "app",
+    },
+    cssCodeSplit: true,
+  },
+});
